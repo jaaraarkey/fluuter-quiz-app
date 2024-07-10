@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/logo.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(context) {
@@ -11,18 +14,19 @@ class StartScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Logo(),
-          // Image.asset("assets/images/quiz-Logo.png"),
-          const Text(
+          Text(
             "Ready for rumble?",
-            style: TextStyle(
+            style: GoogleFonts.robotoMono(
+              fontSize: 24,
               color: Colors.white,
-              fontSize: 24.0,
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 20.0),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              startQuiz();
+            },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(
@@ -31,8 +35,8 @@ class StartScreen extends StatelessWidget {
               ),
               side: const BorderSide(color: Colors.white),
             ),
-            label: const Text("Start Quiz"),
             icon: const Icon(Icons.chevron_right),
+            label: const Text("Start Quiz"),
           )
         ],
       ),
