@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/question_summary/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({super.key, required this.chosenAnswers});
@@ -31,28 +32,46 @@ class ResultsScreen extends StatelessWidget {
         .length
         .toString();
 
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-          margin: const EdgeInsets.all(20),
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const SizedBox(height: 20),
-            Text(
-              'You\'ve ansered $numCorrectAnswers  out of $numQuestions  questions correctly!',
-              style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            QuestionsSummary(summaryData),
-            TextButton(
-                onPressed: () {},
-                child: const Text('Restart Quiz',
-                    style: TextStyle(
-                      color: Colors.white,
-                    )))
-          ])),
+    return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Color(0xFF5433FF),
+            Color(0xFF20BDFF),
+          ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+          shape: BoxShape.rectangle),
+      child: SizedBox(
+        width: double.infinity,
+        child: Container(
+            margin: const EdgeInsets.all(20),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const SizedBox(height: 16),
+              Text(
+                'You\'ve ansered $numCorrectAnswers  out of $numQuestions  questions correctly!',
+                style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30),
+              QuestionsSummary(summaryData),
+              const SizedBox(height: 60),
+              OutlinedButton.icon(
+                onPressed: () {
+                  // startQuiz();
+                },
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 18, top: 10, bottom: 10),
+                  side: const BorderSide(color: Colors.white),
+                ),
+                icon: const Icon(Icons.refresh),
+                label: const Text("Restart Quiz"),
+              )
+            ])),
+      ),
     );
   }
 }

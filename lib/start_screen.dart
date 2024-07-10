@@ -13,30 +13,39 @@ class StartScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Logo(),
           Text(
-            "Ready for rumble?",
+            "The Flutter Quiz",
             style: GoogleFonts.robotoMono(
               fontSize: 24,
               color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 40.0),
+          const Logo(),
+          const SizedBox(height: 40),
+          Text(
+            "Ready to Rumble?",
+            style: GoogleFonts.robotoMono(
+              fontSize: 16,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 100.0),
           OutlinedButton.icon(
             onPressed: () {
               startQuiz();
             },
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(
-                vertical: 16.0,
-                horizontal: 16.0,
-              ),
+              padding: const EdgeInsets.only(
+                  left: 10, right: 18, top: 10, bottom: 10),
               side: const BorderSide(color: Colors.white),
             ),
             icon: const Icon(Icons.chevron_right),
-            label: const Text("Start Quiz"),
+            label:
+                Text("Start Quiz", style: GoogleFonts.robotoMono(fontSize: 16)),
           )
         ],
       ),
