@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/question_summary/question_identifier.dart';
 
+/// A widget that represents a summary item in a quiz app.
 class SummaryItem extends StatelessWidget {
   const SummaryItem(this.itemData, {super.key});
 
+  /// The data for the item.
   final Map<String, Object> itemData;
+
+  /// The color for correct answers.
   final correct = Colors.black;
+
+  /// The color for wrong answers.
   final wrong = Colors.grey;
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// A widget that displays a question identifier with an icon indicating whether the answer is correct or not.
 class QuestionIdentifier extends StatelessWidget {
   const QuestionIdentifier({
     super.key,
@@ -14,8 +15,6 @@ class QuestionIdentifier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final questionNmber = questionIndex + 1;
-
     return Container(
       height: 30,
       width: 30,
@@ -25,14 +24,6 @@ class QuestionIdentifier extends StatelessWidget {
         color: isCorrectAnswer ? Colors.white : Colors.white.withOpacity(0.3),
       ),
       child: isCorrectAnswer ? correctIcon : wrongIcon,
-      // child: Text(
-      //   (questionNmber).toString(),
-      //   style: const TextStyle(
-      //     fontSize: 16,
-      //     fontWeight: FontWeight.bold,
-      //     color: Color.fromARGB(255, 11, 0, 36),
-      //   ),
-      // ),
     );
   }
 }

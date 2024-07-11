@@ -16,68 +16,53 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  List<String> selectedAnswers = [];
+  List<String> selectedAnswers = []; // List to store selected answers
 
-  var activeScreen = 'start-screen';
+  var activeScreen = 'start-screen'; // Variable to track the active screen
 
   void switchScreen() {
     setState(
       () {
-        activeScreen = 'question-screen';
+        activeScreen = 'question-screen'; // Switch to the question screen
       },
     );
   }
 
   void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
+    selectedAnswers.add(answer); // Add the selected answer to the list
 
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        // selectedAnswers = [];
-        activeScreen = 'result-screen';
+        // If all questions are answered
+        activeScreen = 'result-screen'; // Switch to the result screen
       });
     }
   }
-  // Widget? activeScreen;
 
-  // @override
-  // void initState() {
-  //   activeScreen = StartScreen(switchScreen);
-  //   super.initState();
-  // }
-
-  // void switchScreen() {
-  //   setState(
-  //     () {
-  //       activeScreen = const QuestionScreen();
-  //     },
-  //   );
-  // }
   void restartQuiz() {
     setState(() {
-      activeScreen = 'start-screen';
-      selectedAnswers = [];
+      activeScreen = 'start-screen'; // Switch back to the start screen
+      selectedAnswers = []; // Clear the selected answers list
     });
   }
 
   @override
   Widget build(context) {
-    Widget screenWidget = StartScreen(switchScreen);
+    Widget screenWidget =
+        StartScreen(switchScreen); // Default screen is the start screen
 
     if (activeScreen == 'question-screen') {
       screenWidget = QuestionScreen(
         onSelectAnswer: chooseAnswer,
-      );
+      ); // Switch to the question screen if activeScreen is 'question-screen'
     }
 
     if (activeScreen == 'result-screen') {
-      screenWidget =
-          ResultsScreen(chosenAnswers: selectedAnswers, onRestart: restartQuiz);
+      screenWidget = ResultsScreen(
+          chosenAnswers: selectedAnswers,
+          onRestart:
+              restartQuiz); // Switch to the result screen if activeScreen is 'result-screen'
     }
-
-    // final screenWidget = activeScreen == 'start-screen'
-    //     ? StartScreen(switchScreen)
-    //     : const QuestionScreen();
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -87,7 +72,8 @@ class _QuizState extends State<Quiz> {
                 Color(0xFF20BDFF),
               ], begin: Alignment.topLeft, end: Alignment.bottomRight),
             ),
-            child: screenWidget),
+            child:
+                screenWidget), // Display the appropriate screen based on the activeScreen value
       ),
     );
   }

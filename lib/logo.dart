@@ -11,7 +11,6 @@ class Logo extends StatelessWidget {
         "assets/images/quiz-logo.png",
         width: 200,
         height: 200,
-        // color: const Color.fromARGB(200, 0, 23, 97),
       ),
     );
   }

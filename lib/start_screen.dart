@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/logo.dart';
 
+/// The start screen widget for the quiz app.
 class StartScreen extends StatelessWidget {
+  /// Constructs a [StartScreen] widget.
+  ///
+  /// The [startQuiz] parameter is a callback function that will be called when
+  /// the user taps on the "Start Quiz" button.
   const StartScreen(this.startQuiz, {super.key});
 
+  /// Callback function to start the quiz.
   final void Function() startQuiz;
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
