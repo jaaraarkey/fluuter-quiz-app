@@ -45,7 +45,6 @@ This project is licensed under the MIT License (see LICENSE file for details).
 For help getting started with Flutter development, view the![flutter-quiz-app-android](https://github.com/jaaraarkey/fluuter-quiz-app/assets/67980130/6d2b2f07-d464-4ea6-9c01-e5d60cc8cf76)
 
 
-https://github.com/jaaraarkey/fluuter-quiz-app/assets/67980130/552fe99d-4d1d-44dc-8b89-7db1bad2a5c2
 
 
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
