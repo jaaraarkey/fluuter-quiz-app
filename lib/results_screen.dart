@@ -43,35 +43,42 @@ class ResultsScreen extends StatelessWidget {
           shape: BoxShape.rectangle),
       child: SizedBox(
         width: double.infinity,
-        child: Container(
-            margin: const EdgeInsets.all(20),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const SizedBox(height: 16),
-              Text(
-                'You\'ve ansered $numCorrectAnswers  out of $numQuestions  questions correctly!',
-                style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 30),
-              QuestionsSummary(summaryData),
-              const SizedBox(height: 60),
-              OutlinedButton.icon(
-                onPressed: onRestart,
-                style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.only(
-                      left: 10, right: 18, top: 10, bottom: 10),
-                  side: const BorderSide(color: Colors.white),
-                ),
-                icon: const Icon(Icons.refresh),
-                label: Text("Restart Quiz",
-                    style: GoogleFonts.robotoMono(fontSize: 16)),
-              )
-            ])),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+                margin: const EdgeInsets.all(20),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 10),
+                      Text(
+                        'You\'ve ansered $numCorrectAnswers  out of $numQuestions  questions correctly!',
+                        style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 10),
+                      QuestionsSummary(summaryData),
+                      const SizedBox(height: 20),
+                      OutlinedButton.icon(
+                        onPressed: onRestart,
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 18, top: 10, bottom: 10),
+                          side: const BorderSide(color: Colors.white),
+                        ),
+                        icon: const Icon(Icons.refresh),
+                        label: Text("Restart Quiz",
+                            style: GoogleFonts.robotoMono(fontSize: 16)),
+                      )
+                    ])),
+          ],
+        ),
       ),
     );
   }
