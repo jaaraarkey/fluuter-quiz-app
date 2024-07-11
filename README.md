@@ -1,4 +1,5 @@
 ## Flutter Quiz App
+[flutter-quiz-app-android](https://github.com/jaaraarkey/fluuter-quiz-app/assets/67980130/6d2b2f07-d464-4ea6-9c01-e5d60cc8cf76)
 
 This is a simple quiz app built using Flutter and Dart. It allows users to test their knowledge on various topics through a set of multiple-choice questions.
 
@@ -42,11 +43,6 @@ Feel free to fork the repository and submit pull requests with your improvements
 
 This project is licensed under the MIT License (see LICENSE file for details).
 
-For help getting started with Flutter development, view the![flutter-quiz-app-android](https://github.com/jaaraarkey/fluuter-quiz-app/assets/67980130/6d2b2f07-d464-4ea6-9c01-e5d60cc8cf76)
-
-
-
-
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
+For help getting started with Flutter development, view the [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
