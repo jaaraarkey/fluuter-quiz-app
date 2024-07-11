@@ -30,33 +30,32 @@ class _QuestionScreenState extends State<QuestionScreen> {
       child: Container(
         margin: const EdgeInsets.all(40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              currentQuestion.text,
-              style: GoogleFonts.robotoMono(
-                fontSize: 24,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                currentQuestion.text,
+                style: GoogleFonts.robotoMono(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            ...currentQuestion.getShuffledAnswers().map(
-              (answer) {
+              const SizedBox(
+                height: 50,
+              ),
+              ...currentQuestion.getShuffledAnswers().map((answer) {
                 return AnswerButton(
-                  answerText: answer,
-                  onTap: () {
-                    answerQuestion(answer);
-                  },
-                );
-              },
-            ),
-          ],
-        ),
+                    answerText: answer,
+                    onTap: () {
+                      answerQuestion(answer);
+                    });
+              }),
+              const SizedBox(
+                height: 20,
+              ),
+            ]),
       ),
     );
   }

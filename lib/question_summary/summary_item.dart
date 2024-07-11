@@ -37,16 +37,33 @@ class SummaryItem extends StatelessWidget {
                   textAlign: TextAlign.left,
                 ),
                 const SizedBox(height: 6),
-                Text(
-                  itemData['user_answer'] as String,
-                  style: GoogleFonts.robotoMono(
-                      fontSize: 16, color: isCorrectAnswer ? wrong : correct),
-                  textAlign: TextAlign.left,
+                Row(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Icon(
+                        size: 16,
+                        isCorrectAnswer ? Icons.check : Icons.close,
+                        color: isCorrectAnswer ? correct : wrong,
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: Text(
+                        itemData['user_answer'] as String,
+                        style: GoogleFonts.robotoMono(
+                          fontSize: 12,
+                          color: isCorrectAnswer ? correct : wrong,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                    ),
+                  ],
                 ),
                 Text(
                   itemData['correct_answer'] as String,
                   style: GoogleFonts.robotoMono(
-                      fontSize: 16, color: isCorrectAnswer ? correct : wrong),
+                      fontSize: 12, color: isCorrectAnswer ? wrong : correct),
                   textAlign: TextAlign.left,
                 ),
                 const SizedBox(height: 16)
